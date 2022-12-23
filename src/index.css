@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply  bg-slate-900 h-screen text-slate-300;
+    }
+
+    #root {
+        @apply  h-full;
+    }
+}

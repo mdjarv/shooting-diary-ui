@@ -1,0 +1,41 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    addSeries(sessionId: ID!): Series!
+    addShot(inner: Boolean! = false, score: Int!, seriesId: ID!): Shot!
+    createSession(date: String!, name: String!): Session!
+    removeShot(shotId: ID!): Shot!
+    updateShot(score: Int!, shotId: ID!): Shot!
+}
+
+type Query {
+    series(id: ID!): Series
+    session(id: ID!): Session
+    sessions: [Session!]!
+}
+
+type Series {
+    id: ID!
+    order: Int!
+    session: Session!
+    shots: [Shot!]!
+}
+
+type Session {
+    date: String!
+    id: ID!
+    name: String!
+    series: [Series!]!
+}
+
+type Shot {
+    id: ID!
+    inner: Boolean!
+    score: Int!
+    series: Series!
+}
